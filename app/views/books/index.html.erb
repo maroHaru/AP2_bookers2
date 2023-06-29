@@ -1,7 +1,10 @@
 <h1>Books</h1>
   <% @books.each do |book| %>
   <div>
-    <b>Title<%= book.title %></b>
+    <b>Title</b>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <b>Opinion<%= book.body %></b>
   </div>
   <% end %>
