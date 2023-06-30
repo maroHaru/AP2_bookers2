@@ -1,6 +1,7 @@
 <h1>Books</h1>
   <% @books.each do |book| %>
   <div>
+    <%= image_tag book.user.get_profile_image(100,100) %>
     <b>Title</b>
     <span>
       <%= link_to book.title, "/books/#{book.id}" %>

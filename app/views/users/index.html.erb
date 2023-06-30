@@ -2,8 +2,6 @@
 <% @users.each do |user| %>
   <div>
     <b>image<%= image_tag user.get_profile_image(100,100) %></b>
-    <b>name<%= user.book.title %></b>
+    <b>name<%= user.name %></b>
   </div>
 <% end %>
-
-
