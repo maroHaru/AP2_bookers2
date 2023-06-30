@@ -5,6 +5,7 @@
    <%= @user.name %>
    <b>introduction</b>
    <%= @user.introduction %>
+   <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
  </div>
 
 <h1>Users</h1>
