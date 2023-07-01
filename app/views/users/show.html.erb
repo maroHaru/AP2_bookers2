@@ -8,7 +8,7 @@
    <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
  </div>
 
-<h1>Users</h1>
+<h1>Books</h1>
 <% @books.each do |book| %>
   <div>
     <%= image_tag book.user.get_profile_image(100,100) %>

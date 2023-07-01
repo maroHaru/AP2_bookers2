@@ -3,5 +3,6 @@
   <div>
     <b>image<%= image_tag user.get_profile_image(100,100) %></b>
     <b>name<%= user.name %></b>
+    <%= link_to "Show", user_path(user.id) %>
   </div>
 <% end %>
