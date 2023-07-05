@@ -12,69 +12,69 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
-    <header class="shadow-sm">
+    <header class="shadow-sm" style="background-color: #4d4d4d;">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <%= link_to "Bookers", root_path %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
-          <% if user_signed_in? %>
-          <li>
-            <%= link_to user_path(current_user.id) do %>
-              <i class="fa-light fa-house-chimney"></i>
-            <% end %>
-            <%= link_to "Home ", user_path(current_user.id) %>
-          </li>
-          <li>
-            <%= link_to users_path do %>
-              <i class="fa-solid fa-users"></i>
-            <% end %>
-            <%= link_to "Users ", users_path %>
-          </li>
-          <li>
-            <%= link_to books_path do %>
-              <i class="fa-solid fa-book-open"></i>
-            <% end %>
-            <%= link_to "Books ", books_path %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa-solid fa-right-from-bracket"></i>
-            <% end %>
-            <%= link_to "Log Out ", destroy_user_session_path, method: :delete %>
-          </li>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+            <li>
+              <%= link_to user_path(current_user.id) do %>
+                <i class="fa-light fa-house-chimney"></i>
+              <% end %>
+              <%= link_to "Home ", user_path(current_user.id) %>
+            </li>
+            <li>
+              <%= link_to users_path do %>
+                <i class="fa-solid fa-users"></i>
+              <% end %>
+              <%= link_to "Users ", users_path %>
+            </li>
+            <li>
+              <%= link_to books_path do %>
+                <i class="fa-solid fa-book-open"></i>
+              <% end %>
+              <%= link_to "Books ", books_path %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa-solid fa-right-from-bracket"></i>
+              <% end %>
+              <%= link_to "Log Out ", destroy_user_session_path, method: :delete %>
+            </li>
 
-          <% else %>
-          <li>
-            <%= link_to root_path do %>
-              <i class="fa-regular fa-house-chimney"></i>
+            <% else %>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa-regular fa-house-chimney"></i>
+              <% end %>
+              <%= link_to "Home ", root_path %>
+            </li>
+            <li>
+              <%= link_to about_path do %>
+                <i class="fa-duotone fa-link"></i>
+              <% end %>
+              <%= link_to "About ", about_path %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path do %>
+                <i class="fa-solid fa-user-plus"></i>
+              <% end %>
+              <%= link_to "Sign up ", new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <i class="fa-solid fa-right-to-bracket"></i>
+              <% end %>
+              <%= link_to "Log in ", new_user_session_path %>
+            </li>
             <% end %>
-            <%= link_to "Home ", root_path %>
-          </li>
-          <li>
-            <%= link_to about_path do %>
-              <i class="fa-duotone fa-link"></i>
-            <% end %>
-            <%= link_to "About ", about_path %>
-          </li>
-          <li>
-            <%= link_to new_user_registration_path do %>
-              <i class="fa-solid fa-user-plus"></i>
-            <% end %>
-            <%= link_to "Sign up ", new_user_registration_path %>
-          </li>
-          <li>
-            <%= link_to new_user_session_path do %>
-              <i class="fa-solid fa-right-to-bracket"></i>
-            <% end %>
-            <%= link_to "Log in ", new_user_session_path %>
-          </li>
-          <% end %>
-          </ul>
+            </ul>
           </div>
         </div>
       </nav>
@@ -82,7 +82,12 @@
     <main class="mb-auto">
     <%= yield %>
     </main>
-    <footer class
-
+    <footer class="container mt-5">
+      <div class="row">
+        <div class="mx-auto">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
