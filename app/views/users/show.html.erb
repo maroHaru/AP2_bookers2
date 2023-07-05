@@ -8,7 +8,7 @@
    <b>introduction</b>
    <%= @user.introduction %>
    <% if @user != current_user %>
-     <p><%= link_to "プロフィール編集", user_path(@user.id) %></p>
+     <p><%= link_to "プロフィール編集", user_path(current_user.id) %></p>
    <% else %>
      <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
   <% end %>
