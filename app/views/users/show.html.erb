@@ -1,22 +1,39 @@
 <%= flash[:notice] %>
 <div class="container">
   <div class="row">
-    <div class="col-lg-1" style="background-color: orange;">
-    </div>
+    <!--<div class="col-lg-1" style="background-color: orange;">-->
+    <!--</div>-->
     <div class="col-lg-4">
       <h1>User info</h1>
        <div>
          <%= image_tag @user.get_profile_image(100, 100) %>
-         <b>name</b>
-         <%= @user.name %>
-         <b>introduction</b>
-         <%= @user.introduction %>
+         <table class="table table-striped">
+           <thead>
+             <tr>
+               <th>name</th>
+               <th>introduction</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td><%= @user.name %></td>
+               <td><%= @user.introduction %></td>
+             </tr>
+           </tbody>
+        </table>
+      </div>
+
          <% if @user != current_user %>
-           <p><%= link_to "プロフィール編集", user_path(current_user.id) %></p>
+           <p><%= link_to user_path(current_user.id), class: "btn btn-secondary btn-block" do %></p>
+             <i class="fa-solid fa-user-gear"></i>
+              <% end %>
          <% else %>
-           <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
+           <p><%= link_to edit_user_path(@user.id), class: "btn btn-secondary btn-block" do %></p>
+             <i class="fa-solid fa-user-gear"></i>
+             <% end %>
         <% end %>
-       </div>
+
+
 
        <h1>New book</h1>
        <% if @bookers.errors.any? %>
@@ -36,7 +53,7 @@
           <%= f.submit 'Create Book' %>
         <% end %>
     </div>
-    <div class="col-lg-7">
+    <div class="col-lg-8">
     <h1>Books</h1>
     <table class="table table-striped">
       <thead>
