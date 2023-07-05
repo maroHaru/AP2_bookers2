@@ -37,7 +37,7 @@
 
 <h1>Book detail</h1>
 <div>
-  <%= image_tag @book.user.get_profile_image(100,100) %>
+  <%= link_to image_tag(@book.user.get_profile_image(100,100)), user_path(@book.user.id) %>
   <span>
     <%= link_to @book.user.name, user_path(@book.user.id) %>
   </span>
