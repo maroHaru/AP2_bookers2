@@ -2,16 +2,26 @@
   <%= flash[:success] %>
   <%= flash[:notice] %>
 </div>
+<div class="container">
+  <div class="row justify-content-center mx-auto">
+    <div class="col-sm-8 text-left">
+    <h1>Welcome to <i class="fa-solid fa-book"></i>Bookers ‼</h1>
+    </div>
+    <div class="col-sm-8 text-left">
+    <h6>in <i class="fa-solid fa-book"></i>Bookers,</h6>
+    </div>
+    <div class="col-sm-8 text-left">
+    <p>you can share and exchange your opinions , inpressions , and emotions<br>
+      about various books!</p>
+    </div>
 
-<h1>Welcome to Bookers ‼</h1>
-<h6>in Bookers,</h6>
-<p>you can share and exchange your opinions , inpressions , and emotions<br>
-  about various books!</p>
 
-<li>
-<%= link_to "Log in", new_user_session_path %>
-</li>
+    <div class="col-sm-8 text-center mb-3">
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-sm btn-info btn-block" %>
+    </div>
 
-<li>
-<%= link_to "Sign up", new_user_registration_path %>
-</li>
+    <div class="col-sm-8 text-center">
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-sm btn-success btn-block" %>
+    </div>
+  </div>
+</div>
