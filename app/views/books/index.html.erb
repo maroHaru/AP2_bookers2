@@ -1,7 +1,7 @@
 <%= flash[:notice] %>
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-3">
       <% if @bookers.errors.any? %>
         <%= @bookers.errors.count %>errors prohibited this obj from being saved:
         <ul>
@@ -53,8 +53,9 @@
           </div>
         <% end %>
     </div>
-
-    <div class="col-lg-8">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-8">
       <h1>Books</h1>
       <table class="table table-hover">
         <thead>
